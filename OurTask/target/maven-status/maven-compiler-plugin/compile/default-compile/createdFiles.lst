@@ -1,0 +1,10 @@
+com\xiaohei\XiaoPangXieApplication.class
+com\xiaohei\common\model\PageVO.class
+com\xiaohei\test\generator.class
+com\xiaohei\common\exception\BaseErrorEnum.class
+com\xiaohei\common\exception\CommonErrorEnum.class
+com\xiaohei\common\exception\BizException.class
+com\xiaohei\test\generator$1.class
+com\xiaohei\common\model\PageQueryRequest.class
+com\xiaohei\common\exception\BaseErrorEnum$1.class
+com\xiaohei\common\model\JsonResult.class
