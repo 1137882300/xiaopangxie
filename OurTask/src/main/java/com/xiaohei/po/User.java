@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author xiao-pang
@@ -59,6 +59,19 @@ public class User implements Serializable {
     @TableLogic
     private Integer isDeleted;
 
+    /**
+     * 预留拓展
+     */
+    @TableField("features")
+    private String features;
+
+    public String getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(String features) {
+        this.features = features;
+    }
 
     public Long getId() {
         return id;
@@ -129,12 +142,13 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-        "id=" + id +
-        ", name=" + name +
-        ", avatar=" + avatar +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDeleted=" + isDeleted +
-        "}";
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isDeleted=" + isDeleted +
+                ", features='" + features + '\'' +
+                '}';
     }
 }

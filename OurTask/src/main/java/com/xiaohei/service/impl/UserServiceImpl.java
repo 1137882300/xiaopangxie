@@ -17,4 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
+    private void tt(){
+        System.out.println("sss");
+    }
 }

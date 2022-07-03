@@ -31,7 +31,7 @@ public class generator {
                 .globalConfig(x -> x.author("xiao-pang").outputDir(path).disableOpenDir())
                 //策略配置：哪些表
                 .strategyConfig(x -> {
-                    x.addInclude("basic,t_user")
+                    x.addInclude("basic,t_user,t_relation,t_integral,t_gift,t_task")
                             .addTablePrefix("t_")
                             .entityBuilder().idType(IdType.ASSIGN_UUID).versionColumnName("version").logicDeleteColumnName("is_deleted")
                             .enableColumnConstant().enableChainModel().enableTableFieldAnnotation()
