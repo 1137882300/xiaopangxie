@@ -2,7 +2,6 @@ package com.xiaohei.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -10,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author xiao-pang
- * @since 2022-07-03
+ * @since 2022-07-10
  */
-@RestController
+@Controller
 @RequestMapping("/basic")
 public class BasicController {
 

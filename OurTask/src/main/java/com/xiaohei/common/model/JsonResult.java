@@ -28,7 +28,7 @@ public class JsonResult<T> implements Serializable {
     private String appMessage;
     private T result;
 
-    public JsonResult() {
+    public JsonResult(Boolean aBoolean) {
         this(true, "200", "操作成功!");
     }
 

@@ -37,11 +37,13 @@ public class generator {
                             .enableColumnConstant().enableChainModel().enableTableFieldAnnotation()
                             .addTableFills(new Column("create_time", FieldFill.INSERT))
                             .addTableFills(new Property("updateTime", FieldFill.INSERT_UPDATE))
+
                     ;
                 })
 
                 //包配置
-                .packageConfig(x -> x.parent("com.xiaohei").entity("po").controller("controller").service("service")
+                .packageConfig(x -> x.parent("com.xiaohei.repository").controller("controller")
+                        .entity("po").service("service")
                         .serviceImpl("service.impl").mapper("mapper").xml("mapper.xml")
                         .pathInfo(new HashMap<OutputFile, String>() {{
                             put(OutputFile.xml, xmlPath);

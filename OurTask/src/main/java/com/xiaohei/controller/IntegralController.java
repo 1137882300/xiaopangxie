@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
  * </p>
  *
  * @author xiao-pang
- * @since 2022-07-03
+ * @since 2022-07-10
  */
 @Controller
 @RequestMapping("/integral")
