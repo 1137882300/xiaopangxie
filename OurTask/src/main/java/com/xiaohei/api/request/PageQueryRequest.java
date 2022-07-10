@@ -1,4 +1,4 @@
-package com.xiaohei.common.model;
+package com.xiaohei.api.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

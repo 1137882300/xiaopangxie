@@ -1,24 +1,19 @@
-package com.xiaohei.common.model;
+package com.xiaohei.api.vo;
 
 /**
  * Created by cc on 2022/7/3
  */
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
+import com.xiaohei.api.request.PageQueryRequest;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Setter
@@ -73,7 +68,7 @@ public class PageVO<T> {
     }
 
     public static <T> PageVO<T> convert(Page<?> page, List<T> list, int startPage) {
-        PageVO<T> pageVO = new PageVO();
+        PageVO<T> pageVO = new PageVO<>();
         pageVO.setCurrent((long) page.getNumber() + (long) startPage);
         pageVO.setPages((long) page.getTotalPages());
         pageVO.setSize((long) page.getSize());

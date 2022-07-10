@@ -1,6 +1,6 @@
 package com.xiaohei.repository.service;
 
-import com.xiaohei.repository.po.Gift;
+import com.xiaohei.repository.po.Basic;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author xiao-pang
  * @since 2022-07-10
  */
-public interface IGiftService extends IService<Gift> {
+public interface BasicRpService extends IService<Basic> {
 
 }

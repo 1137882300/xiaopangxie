@@ -1,6 +1,6 @@
 package com.xiaohei.repository.service;
 
-import com.xiaohei.repository.po.Task;
+import com.xiaohei.repository.po.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author xiao-pang
  * @since 2022-07-10
  */
-public interface ITaskService extends IService<Task> {
+public interface UserRpService extends IService<User> {
 
 }

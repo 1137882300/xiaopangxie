@@ -2,7 +2,7 @@ package com.xiaohei.repository.service.impl;
 
 import com.xiaohei.repository.po.Task;
 import com.xiaohei.repository.mapper.TaskMapper;
-import com.xiaohei.repository.service.ITaskService;
+import com.xiaohei.repository.service.TaskRpService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-07-10
  */
 @Service
-public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements ITaskService {
+public class TaskRpServiceImpl extends ServiceImpl<TaskMapper, Task> implements TaskRpService {
 
 }

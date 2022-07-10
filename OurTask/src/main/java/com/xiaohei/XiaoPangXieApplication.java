@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan({"com.*.mapper"})
+@MapperScan(value = {"com.xiaohei.repository.mapper"})
 @Slf4j
 public class XiaoPangXieApplication {
     public static void main(String[] args) {

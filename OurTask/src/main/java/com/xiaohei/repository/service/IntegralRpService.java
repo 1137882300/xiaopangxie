@@ -1,6 +1,6 @@
 package com.xiaohei.repository.service;
 
-import com.xiaohei.repository.po.User;
+import com.xiaohei.repository.po.Integral;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author xiao-pang
  * @since 2022-07-10
  */
-public interface IUserService extends IService<User> {
+public interface IntegralRpService extends IService<Integral> {
 
 }

@@ -2,7 +2,7 @@ package com.xiaohei.repository.service.impl;
 
 import com.xiaohei.repository.po.User;
 import com.xiaohei.repository.mapper.UserMapper;
-import com.xiaohei.repository.service.IUserService;
+import com.xiaohei.repository.service.UserRpService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-07-10
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class UserRpServiceImpl extends ServiceImpl<UserMapper, User> implements UserRpService {
 
 }

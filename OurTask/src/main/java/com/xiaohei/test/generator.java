@@ -33,6 +33,7 @@ public class generator {
                 .strategyConfig(x -> {
                     x.addInclude("basic,t_user,t_relation,t_integral,t_gift,t_task")
                             .addTablePrefix("t_")
+                            .serviceBuilder().formatServiceFileName("%sRpService").formatServiceImplFileName("%sRpServiceImpl")
                             .entityBuilder().idType(IdType.ASSIGN_UUID).versionColumnName("version").logicDeleteColumnName("is_deleted")
                             .enableColumnConstant().enableChainModel().enableTableFieldAnnotation()
                             .addTableFills(new Column("create_time", FieldFill.INSERT))
@@ -42,7 +43,8 @@ public class generator {
                 })
 
                 //包配置
-                .packageConfig(x -> x.parent("com.xiaohei.repository").controller("controller")
+                .packageConfig(x -> x.parent("com.xiaohei.repository")
+//                        .controller("controller")
                         .entity("po").service("service")
                         .serviceImpl("service.impl").mapper("mapper").xml("mapper.xml")
                         .pathInfo(new HashMap<OutputFile, String>() {{

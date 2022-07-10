@@ -38,6 +38,7 @@
     <velocity-engine.version>2.3</velocity-engine.version>
     <commons.collections4.version>4.4</commons.collections4.version>
     <commons.lang3.version>3.12.0</commons.lang3.version>
+    <mapstruct.version>1.5.1.Final</mapstruct.version>
   </properties>
 
   <dependencyManagement>
@@ -138,6 +139,12 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>${commons.lang3.version}</version>
+      </dependency>
+      <!--转换-->
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
