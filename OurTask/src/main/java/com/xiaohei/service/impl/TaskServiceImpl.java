@@ -1,8 +1,12 @@
 package com.xiaohei.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaohei.api.request.AddTaskRequest;
+import com.xiaohei.api.vo.PageVO;
+import com.xiaohei.api.vo.TaskVO;
 import com.xiaohei.repository.po.Task;
+import com.xiaohei.repository.query.TaskPageQuery;
 import com.xiaohei.repository.service.TaskRpService;
 import com.xiaohei.service.TaskService;
 import com.xiaohei.service.common.constant.ValueConstants;
@@ -47,10 +51,18 @@ public class TaskServiceImpl implements TaskService {
         LocalDateTime now = LocalDateTime.now();
         task.setCreateTime(now);
         task.setUpdateTime(now);
-        task.setStartTime(Optional.ofNullable(request.getStartTime()).orElse(LocalDateTime.of(2022,7,10,15,36)));
-        task.setEndTime(Optional.ofNullable(request.getEndTime()).orElse(LocalDateTime.of(2022,7,10,15,36)));
+        task.setStartTime(Optional.ofNullable(request.getStartTime()).orElse(LocalDateTime.of(2022, 7, 10, 15, 36)));
+        task.setEndTime(Optional.ofNullable(request.getEndTime()).orElse(LocalDateTime.of(2022, 7, 10, 15, 36)));
         task.setIsDeleted(ValueConstants.undelete);
         log.info("PO.Task:{}", JSON.toJSONString(task));
         return taskRpService.save(task);
+    }
+
+    @Override
+    public PageVO<TaskVO> getTaskPage(TaskPageQuery taskPageQuery) {
+        Page<Task> page = taskRpService.getTaskPage(taskPageQuery);
+
+
+        return PageVO.convert(page, null);
     }
 }

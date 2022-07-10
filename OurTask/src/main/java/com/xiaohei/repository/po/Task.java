@@ -6,12 +6,13 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author xiao-pang
@@ -33,6 +34,9 @@ public class Task implements Serializable {
      */
     @TableField("type")
     private Integer type;
+
+    @TableField("task_name")
+    private String taskName;
 
     /**
      * 任务内容
@@ -204,6 +208,14 @@ public class Task implements Serializable {
         return this;
     }
 
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
     public static final String ID = "id";
 
     public static final String TYPE = "type";
@@ -231,18 +243,19 @@ public class Task implements Serializable {
     @Override
     public String toString() {
         return "Task{" +
-        "id=" + id +
-        ", type=" + type +
-        ", content=" + content +
-        ", status=" + status +
-        ", features=" + features +
-        ", creator=" + creator +
-        ", modifier=" + modifier +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", startTime=" + startTime +
-        ", endTime=" + endTime +
-        ", isDeleted=" + isDeleted +
-        "}";
+                "id=" + id +
+                ", type=" + type +
+                ", taskName=" + taskName +
+                ", content=" + content +
+                ", status=" + status +
+                ", features=" + features +
+                ", creator=" + creator +
+                ", modifier=" + modifier +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", isDeleted=" + isDeleted +
+                "}";
     }
 }

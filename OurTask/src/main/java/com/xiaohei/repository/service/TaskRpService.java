@@ -1,7 +1,9 @@
 package com.xiaohei.repository.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaohei.repository.po.Task;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xiaohei.repository.query.TaskPageQuery;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TaskRpService extends IService<Task> {
 
+    Page<Task> getTaskPage(TaskPageQuery taskPageQuery);
 }

@@ -1,7 +1,9 @@
 package com.xiaohei.common.converter;
 
 import com.xiaohei.api.request.AddTaskRequest;
+import com.xiaohei.api.request.TaskPageRequest;
 import com.xiaohei.repository.po.Task;
+import com.xiaohei.repository.query.TaskPageQuery;
 import com.xiaohei.service.common.model.TaskModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,6 +18,9 @@ import org.mapstruct.factory.Mappers;
 public interface TaskConverter {
 
     TaskConverter INSTANCE = Mappers.getMapper(TaskConverter.class);
+
+
+    TaskPageQuery requestToPageQuery(TaskPageRequest request);
 
     @Mappings({
             @Mapping(target = "", source = ""),

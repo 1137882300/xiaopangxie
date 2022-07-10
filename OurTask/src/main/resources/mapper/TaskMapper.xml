@@ -2,4 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaohei.repository.mapper.TaskMapper">
 
+
+    <select id="getTaskPage" resultType="com.xiaohei.repository.po.Task">
+        select
+        *
+        from
+        t_task
+        <where>
+            <if test="query.type != null">
+                and `type` = #{query.type}
+            </if>
+            <if test="query.taskName != null">
+                and task_name like CONCAT('%',#{query.taskName},'%')
+            </if>
+            <if test="query.status != null">
+                and status = #{query.status}
+            </if>
+            <if test="query.creator != null">
+                and creator = #{query.creator}
+            </if>
+            and is_deleted = 0
+        </where>
+        order by update_time desc
+    </select>
+
 </mapper>
