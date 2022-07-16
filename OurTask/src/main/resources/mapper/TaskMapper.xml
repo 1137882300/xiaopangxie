@@ -2,12 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaohei.repository.mapper.TaskMapper">
 
+    <sql id="tabla_name">t_task</sql>
 
     <select id="getTaskPage" resultType="com.xiaohei.repository.po.Task">
         select
         *
         from
-        t_task
+        <include refid="tabla_name"/>
         <where>
             <if test="query.type != null">
                 and `type` = #{query.type}

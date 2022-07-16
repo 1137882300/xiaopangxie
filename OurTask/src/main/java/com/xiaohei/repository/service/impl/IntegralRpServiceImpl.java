@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class IntegralRpServiceImpl extends ServiceImpl<IntegralMapper, Integral> implements IntegralRpService {
 
+    @Override
+    public Integral getByTaskId(Long taskId) {
+        return baseMapper.getByTaskId(taskId);
+    }
 }

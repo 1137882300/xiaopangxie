@@ -1,8 +1,7 @@
 package com.xiaohei.controller;
 
 import com.xiaohei.api.facade.TaskFacade;
-import com.xiaohei.api.request.AddTaskRequest;
-import com.xiaohei.api.request.TaskPageRequest;
+import com.xiaohei.api.request.*;
 import com.xiaohei.api.vo.PageVO;
 import com.xiaohei.api.vo.TaskVO;
 import com.xiaohei.common.converter.TaskConverter;
@@ -34,7 +33,7 @@ public class TaskController implements TaskFacade {
     private TaskService taskService;
 
 
-    @PostMapping("/addTask")
+    @PostMapping(value = "/addTask", headers = "Content-Type=application/json")
     @Override
     public JsonResult<Boolean> addTask(@Valid AddTaskRequest request) {
         return JsonResult.success(taskService.addTask(request));
@@ -45,6 +44,24 @@ public class TaskController implements TaskFacade {
     public JsonResult<PageVO<TaskVO>> getTaskPage(TaskPageRequest request) {
         TaskPageQuery taskPageQuery = TaskConverter.INSTANCE.requestToPageQuery(request);
         return JsonResult.success(taskService.getTaskPage(taskPageQuery));
+    }
+
+    @PostMapping("/editTask")
+    @Override
+    public JsonResult<Boolean> editTask(EditTaskRequest request) {
+        return JsonResult.success(taskService.editTask(request));
+    }
+
+    @PostMapping("/receiveTask")
+    @Override
+    public JsonResult<Boolean> receiveTask(ReceiveTaskRequest request) {
+        return null;
+    }
+
+    @PostMapping("/completeTask")
+    @Override
+    public JsonResult<Boolean> completeTask(CompleteTaskRequest request) {
+        return null;
     }
 
 

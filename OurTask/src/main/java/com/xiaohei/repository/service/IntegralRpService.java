@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IntegralRpService extends IService<Integral> {
 
+    Integral getByTaskId(Long taskId);
 }

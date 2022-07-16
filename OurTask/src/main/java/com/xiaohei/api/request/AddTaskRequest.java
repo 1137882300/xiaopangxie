@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -15,7 +17,15 @@ import java.util.Map;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddTaskRequest {
+public class AddTaskRequest implements Serializable {
+
+    public static final long serialVersionUID = 1L;
+
+    /**
+     * 积分数量
+     */
+    @Size(min = 10, message = "最少是10积分")
+    private Long Integral = 10L;
 
     private Integer type;
 

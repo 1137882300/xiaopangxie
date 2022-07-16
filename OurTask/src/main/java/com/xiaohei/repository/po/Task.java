@@ -1,11 +1,6 @@
 package com.xiaohei.repository.po;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -99,6 +94,20 @@ public class Task implements Serializable {
     @TableLogic
     private Integer isDeleted;
 
+    /**
+     * 版本号
+     */
+    @TableField("version")
+    @Version
+    private Long version;
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
 
     public Long getId() {
         return id;
@@ -256,6 +265,7 @@ public class Task implements Serializable {
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", isDeleted=" + isDeleted +
+                ", version=" + version +
                 "}";
     }
 }

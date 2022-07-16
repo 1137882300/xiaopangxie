@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaohei.repository.mapper.IntegralMapper">
 
+    <sql id="table_name">t_integral</sql>
+
+    <select id="getByTaskId" resultType="com.xiaohei.repository.po.Integral">
+        select *
+        from <include refid="table_name"/>
+        where is_deleted = 0
+        and task_id = #{taskId}
+    </select>
+
 </mapper>

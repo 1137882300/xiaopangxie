@@ -2,6 +2,7 @@ package com.xiaohei.repository.mapper;
 
 import com.xiaohei.repository.po.Integral;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface IntegralMapper extends BaseMapper<Integral> {
 
+    Integral getByTaskId(@Param("taskId") Long taskId);
 }

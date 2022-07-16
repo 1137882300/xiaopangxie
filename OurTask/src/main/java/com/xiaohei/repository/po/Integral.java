@@ -1,17 +1,13 @@
 package com.xiaohei.repository.po;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author xiao-pang
@@ -83,6 +79,20 @@ public class Integral implements Serializable {
     @TableLogic
     private Integer isDeleted;
 
+    /**
+     * version
+     */
+    @TableField("version")
+    @Version
+    private Long version;
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
 
     public Long getId() {
         return id;
@@ -197,16 +207,17 @@ public class Integral implements Serializable {
     @Override
     public String toString() {
         return "Integral{" +
-        "id=" + id +
-        ", taskId=" + taskId +
-        ", quantity=" + quantity +
-        ", status=" + status +
-        ", features=" + features +
-        ", creator=" + creator +
-        ", modifier=" + modifier +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDeleted=" + isDeleted +
-        "}";
+                "id=" + id +
+                ", taskId=" + taskId +
+                ", quantity=" + quantity +
+                ", status=" + status +
+                ", features=" + features +
+                ", creator=" + creator +
+                ", modifier=" + modifier +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isDeleted=" + isDeleted +
+                ", version=" + version +
+                "}";
     }
 }
