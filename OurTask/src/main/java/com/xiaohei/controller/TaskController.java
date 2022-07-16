@@ -7,6 +7,7 @@ import com.xiaohei.api.vo.TaskVO;
 import com.xiaohei.common.converter.TaskConverter;
 import com.xiaohei.common.model.JsonResult;
 import com.xiaohei.repository.query.TaskPageQuery;
+import com.xiaohei.service.RelationService;
 import com.xiaohei.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,8 @@ public class TaskController implements TaskFacade {
 
     @Resource
     private TaskService taskService;
+    @Resource
+    private RelationService relationService;
 
 
     @PostMapping(value = "/addTask", headers = "Content-Type=application/json")
@@ -55,13 +58,13 @@ public class TaskController implements TaskFacade {
     @PostMapping("/receiveTask")
     @Override
     public JsonResult<Boolean> receiveTask(ReceiveTaskRequest request) {
-        return null;
+        return JsonResult.success(relationService.receiveTask(request));
     }
 
     @PostMapping("/completeTask")
     @Override
     public JsonResult<Boolean> completeTask(CompleteTaskRequest request) {
-        return null;
+        return JsonResult.success(relationService.completeTask(request));
     }
 
 

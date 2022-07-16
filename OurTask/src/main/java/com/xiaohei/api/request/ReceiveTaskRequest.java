@@ -23,5 +23,10 @@ public class ReceiveTaskRequest implements Serializable {
      * 领取人
      */
     private Long recipient;
+    /**
+     * 1. 领取true
+     * 2. 拒绝false
+     */
+    private Boolean receive = Boolean.TRUE;
 
 }
