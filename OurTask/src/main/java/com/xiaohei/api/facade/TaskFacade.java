@@ -36,7 +36,7 @@ public interface TaskFacade {
     JsonResult<Boolean> editTask(EditTaskRequest request);
 
     /**
-     * 领取任务
+     * 领取任务or拒绝任务
      *
      * @param request
      * @return

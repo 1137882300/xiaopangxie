@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface RelationRpService extends IService<Relation> {
 
+    Relation getByTaskIdAndType(Long taskId, String type);
 }

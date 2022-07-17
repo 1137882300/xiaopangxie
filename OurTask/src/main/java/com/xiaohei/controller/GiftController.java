@@ -1,7 +1,8 @@
 package com.xiaohei.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.xiaohei.api.facade.GiftFacade;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * <p>
@@ -13,6 +14,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @RequestMapping("/gift")
-public class GiftController {
+public class GiftController implements GiftFacade {
+
+
+
+
 
 }

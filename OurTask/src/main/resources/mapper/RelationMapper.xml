@@ -2,4 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaohei.repository.mapper.RelationMapper">
 
+    <sql id="table_name">t_relation</sql>
+
+    <select id="getByTaskIdAndType" resultType="com.xiaohei.repository.po.Relation">
+        select *
+        from <include refid="table_name"/>
+        <where>
+            <if test="taskId != null">
+                and master = #{taskId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            and is_deleted = 0
+        </where>
+    </select>
+
 </mapper>

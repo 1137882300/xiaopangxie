@@ -11,7 +11,7 @@ public enum TaskErrorEnum implements BaseErrorEnum {
     TASK_ID_NOT_EMPTY("任务ID不能为空"),
     TASK_NOT_EXIST("任务不存在啊"),
     TASK_OPTIMISTIC_LOCKING_ERROR("版本号不对"),
-
+    TASK_AND_RECIPIENT_NOT_EMPTY("任务以及领取人不能为空"),
 
 
     ;
